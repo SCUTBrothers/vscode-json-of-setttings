@@ -1,0 +1,222 @@
+{
+  "vim.highlightedyank.enable": true,
+  "vim.easymotion": true,
+  "vim.camelCaseMotion.enable": false,
+  "vim.surround": true,
+  "vim.sneak": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.foldfix": true,
+
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // ! 如果按键失效了，注意是否是驼峰命名法, settings.json有可能将驼峰命名全改为小写
+    {
+      "before": ["J"],
+      "after": ["g", "T"]
+    },
+    {
+      "before": ["K"],
+      "after": ["g", "t"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["g", "o"],
+      "after": ["G"]
+    },
+
+    // emoji
+    {
+      "before": ["<leader>", "p"],
+      "commands": ["emoji.insert"]
+    },
+    {
+      "before": ["<leader>", "p", "m"],
+      "commands": ["emoji.insertMarkdown"]
+    },
+    {
+      "before": ["<leader>", "s"],
+      "after": ["<leader>", "<leader>", "s"]
+    },
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": ["-"],
+      "after": ["%"]
+    },
+    {
+      "before": ["_"],
+      "commands": ["bracket-jumper.ascendLeft"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "z"],
+      "commands": ["workbench.action.toggleZenMode"]
+    },
+    {
+      "before": ["<leader>", "a"],
+      "commands": ["workbench.action.toggleActivityBarVisibility"]
+    },
+    {
+      "before": ["<leader>", "q", "k"],
+      "commands": ["quokka.toggle"]
+    },
+    {
+      "before": ["<leader>", "i", "t"],
+      "commands": ["highlight-matching-tag.selectPairContents"]
+    },
+    {
+      "before": ["<leader>", "d", "t"],
+      "commands": ["editor.emmet.action.removeTag"]
+    },
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["highlight-matching-tag.jumpToMatchingTag"]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["code-runner.run"]
+    },
+    {
+      "before": ["<leader>", "c"],
+      "commands": ["liveSass.command.oneTimeCompileSass"]
+    },
+    {
+      "before": ["<leader>", "s", "c"],
+      "commands": ["liveSass.command.donotWatchMySass"]
+    },
+    {
+      "before": ["<leader>", "l", "c"],
+      "commands": ["liveSass.command.watchMySass"]
+    },
+
+    // bookmark
+    {
+      "before": ["<leader>", "b"],
+      "commands": ["bookmarks.toggle"]
+    },
+    {
+      "before": ["<leader>", "b", "j"],
+      "commands": ["bookmarks.jumpToNext"]
+    },
+    {
+      "before": ["<leader>", "b", "k"],
+      "commands": ["bookmarks.jumpToPrevious"]
+    },
+    {
+      "before": ["<leader>", "b", "l"],
+      "commands": ["bookmarks.listFromAllFiles"]
+    },
+    {
+      "before": ["<leader>", "b", "c"],
+      "commands": ["bookmarks.clear"]
+    },
+    {
+      "before": ["<leader>", "1"],
+      "commands": ["workbench.action.focusFirstEditorGroup"]
+    },
+    {
+      "before": ["<leader>", "2"],
+      "commands": ["workbench.action.focusSecondEditorGroup"]
+    },
+
+    // fold code pieces
+    {
+      "before": ["<leader>", "f"],
+      "commands": [
+        {
+          "command": "editor.fold",
+          "when": "editorTextFocus && foldingEnabled"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "f", "e"],
+      "commands": [
+        {
+          "command": "editor.unfold",
+          "when": "editorTextFocus && foldingEnabled"
+        }
+      ]
+    },
+
+    // debug
+    {
+      "before": ["<leader>", "u"],
+      "commands": [
+        {
+          "command": "extension.js-debug.debugLink",
+          "args": "http://127.0.0.1:5500/index.html"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "u", "r"],
+      "commands": [
+        {
+          "command": "workbench.action.debug.restart",
+          "when": "debugState != 'inactive'"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "<leader>"],
+      "commands": [
+        {
+          "command": "workbench.action.debug.stepInto",
+          "when": "debugState != 'inactive'"
+        }
+      ]
+    }
+  ],
+
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<leader>", "c", "m"],
+      "commands": ["extension.changeCase.camel"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    }
+  ],
+
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-b>": false,
+    "<C-c>": false,
+    "<C-k>": false,
+    "<C-n>": false,
+    "<C-e>": false
+  }
+}
