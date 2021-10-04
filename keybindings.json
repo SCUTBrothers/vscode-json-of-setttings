@@ -1,0 +1,144 @@
+// 将键绑定放在此文件中以覆盖默认值auto[]
+[
+  // ----------------- editor ---------------------
+  // file tree explorer
+  {
+    "key": "j",
+    "command": "list.focusDown",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "k",
+    "command": "list.focusUp",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "b",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "list.select",
+    "when": "explorerViewletVisible && filesExplorerFocus"
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "f",
+    "command": "explorer.newFolder",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+
+  // symbol reference view
+  {
+    "key": "b",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "references-view.canNavigate && !inputFocus"
+  },
+
+  // code edit
+  {
+    "key": "alt+j",
+    "command": "editor.action.moveLinesDownAction"
+  },
+  {
+    "key": "alt+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+
+  // suggestions
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenNavigatePrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenNavigateNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "tab",
+    "command": "selectNextSuggestion",
+    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+  },
+  {
+    "key": "tab",
+    "command": "workbench.action.quickOpenNavigateNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "shift+tab",
+    "command": "selectPrevSuggestion",
+    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+  },
+  {
+    "key": "shift+tab",
+    "command": "workbench.action.quickOpenNavigatePrevious",
+    "when": "inQuickOpen"
+  },
+
+  // open settings.json file
+  {
+    "key": "ctrl+.",
+    "command": "workbench.action.openSettingsJson"
+  },
+
+  // terminal: focus terminal, and jump back to editor, also enabled for expolerer and extension focus time
+  {
+    "key": "ctrl+b",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus || viewContainer.workbench.view.explorer.enabled"
+  },
+
+  // vim
+  {
+    "key": "ctrl+m",
+    "command": "toggleVim"
+  },
+
+  // plant uml
+  {
+    "key": "alt+d",
+    "command": "-plantuml.preview"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "-markdown-preview-enhanced.openPreview",
+    "when": "editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "markdown-preview-enhanced.openPreviewToTheSide",
+    "when": "editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+k v",
+    "command": "-markdown-preview-enhanced.openPreviewToTheSide",
+    "when": "editorLangId == 'markdown'"
+  }
+]

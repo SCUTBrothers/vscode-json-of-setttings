@@ -1,30 +1,4 @@
 {
-  // themes
-  "workbench.colorTheme": "One Dark Pro Flat",
-  "workbench.colorCustomizations": {
-    "[One Dark Pro]": {
-      "terminal.background": "#281c34",
-      "terminal.foreground": "#D5C4A1",
-      "terminalCursor.background": "#D5C4A1",
-      "terminalCursor.foreground": "#D5C4A1",
-      "terminal.ansiBlack": "#282c34",
-      "terminal.ansiBlue": "#83A598",
-      "terminal.ansiBrightBlack": "#665C54",
-      "terminal.ansiBrightBlue": "#83A598",
-      "terminal.ansiBrightCyan": "#8EC07C",
-      "terminal.ansiBrightGreen": "#B8BB26",
-      "terminal.ansiBrightMagenta": "#D3869B",
-      "terminal.ansiBrightRed": "#FB4934",
-      "terminal.ansiBrightWhite": "#FBF1C7",
-      "terminal.ansiBrightYellow": "#FABD2F",
-      "terminal.ansiCyan": "#8EC07C",
-      "terminal.ansiGreen": "#B8BB26",
-      "terminal.ansiMagenta": "#D3869B",
-      "terminal.ansiRed": "#FB4934",
-      "terminal.ansiWhite": "#D5C4A1",
-      "terminal.ansiYellow": "#FABD2F"
-    }
-  },
   "workbench.iconTheme": "material-icon-theme",
   "terminal.integrated.fontFamily": "DroidSansMono Nerd Font",
 
@@ -76,6 +50,10 @@
   },
   "terminal.integrated.gpuAcceleration": "off",
 
+  // git
+  "git.path": "E:\\004-Software\\Git\\bin\\git.exe",
+  "git.allowForcePush": true,
+
   // ------------------- language settings------------
   // frontend
   "[typescript, javascript, json, scss, css, html]": {
@@ -85,8 +63,8 @@
 
   // markdown
   "markdown.preview.fontFamily": "'Times New Roman', '楷体', sans-serif",
-  "markdown-preview-enhanced.codeBlockTheme": "atom-dark.css",
-  "markdown-preview-enhanced.previewTheme": "atom-dark.css",
+  "markdown-preview-enhanced.codeBlockTheme": "one-dark.css",
+  "markdown-preview-enhanced.previewTheme": "one-dark.css",
   "markdown.preview.fontSize": 18,
   "markdownFormatter.fullWidthTurnHalfWidth": "auto",
   "markdownFormatter.formatOpt": {
@@ -131,6 +109,9 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
+  // instant markdown
+  "instantmarkdown.autoOpenBrowser": false,
 
   // --------------------- vim key settings ---------------------------------------------
   // vim base settings
@@ -188,14 +169,31 @@
       "before": ["-"],
       "after": ["%"]
     },
-    // vscode command trigger
+    // vscode command trigger: quick open, quick open with @(find symbol) and command panel
     {
       "before": ["leader", "o"],
       "commands": ["workbench.action.quickOpen"]
     },
     {
-      "before": [":", ":"],
+      "before": ["leader", "s"],
+      "commands": ["workbench.action.gotoSymbol"]
+    },
+    {
+      "before": ["leader", ";"],
       "commands": ["workbench.action.showCommands"]
+    },
+    // find symbol reference
+    {
+      "before": ["leader", "r", "r"],
+      "commands": ["references-view.findReferences"]
+    },
+    {
+      "before": ["leader", "r", "s"],
+      "commands": ["workbench.view.extension.references-view"]
+    },
+    {
+      "before": ["leader", "r", "c"],
+      "commands": ["references-view.tree.removeView"]
     },
     // buffer key bindings
     {
@@ -232,7 +230,16 @@
     },
     // debug
     {
-      "before": ["leader", "d", "e"],
+      "before": ["leader", "d", "d"],
+      "commands": [
+        {
+          "command": "extension.js-debug.debugLink",
+          "args": "http://127.0.0.1:5500/index.html"
+        }
+      ]
+    },
+    {
+      "before": ["leader", "d", "s"],
       "commands": ["workbench.action.debug.start"]
     },
     {
@@ -365,6 +372,11 @@
       "before": ["leader", "t", "c"],
       "commands": ["workbench.action.closePanel"]
     },
+    // quokka.js
+    {
+      "before": ["leader", "q", "k"],
+      "commands": ["quokka.toggle"]
+    },
     // ui
     {
       "before": ["leader", "u", "a"],
@@ -387,10 +399,17 @@
       "commands": ["workbench.view.extensions"]
     }
   ],
+
   "vim.visualModeKeyBindings": [
     {
-      "before": [":", ":"],
+      "before": ["leader", ";"],
       "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "before": ["leader", "c"],
+      "commands": ["extension.changeCase"]
     }
-  ]
+  ],
+  "workbench.colorTheme": "One Dark Pro Flat",
+  "oneDarkPro.italic": false
 }
